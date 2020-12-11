@@ -1,0 +1,154 @@
+@charset "utf-8"
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  cursor: pointer
+  padding-right: 30px !important
+  background-repeat: no-repeat
+  background-position: 100% 50%
+  background-image: url("../assets/icon/icon-dropdown.png")
+
+.checkbox, .radio
+  position: relative
+  cursor: pointer
+  line-height: 1.4
+  padding:
+    left: 25px
+
+  input
+    display: none
+
+  .virtual-box
+    position: absolute
+    left: 0
+    top: 2px
+    width: 16px
+    height: 16px
+    border: 0.5px solid $border
+    background: #fafafa
+
+  .text
+    display: inline-block
+    vertical-align: middle
+
+  &:hover .text
+    color: var(--main-bg-color)
+
+  input
+    ~ .virtual-box:after
+      content: ''
+      opacity: 0
+      transition: all 0.2s
+      -webkit-transition: all 0.2s
+    &:checked ~ .virtual-box
+      &:after
+        opacity: 1
+        
+      border: 1px solid $border
+
+.checkbox
+  .virtual-box
+    border-radius: 2px
+  input
+    ~ .virtual-box:after
+      content: ''
+      width: 5px
+      height: 10px
+      border-right: 2px solid $info
+      border-bottom: 2px solid $info
+      position: absolute
+      transform: rotate(45deg) translate(-50%, -50%)
+      -webkit-transform: rotate(45deg) translate(-50%, -50%)
+      left: 28%
+      top: 48%
+      
+.radio
+  .virtual-box
+    border-radius: 50%
+  input
+    ~ .virtual-box:after
+      content: ''
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      background-color: $info
+      position: absolute
+      transform: translate(-50%, -50%)
+      left: 50%
+      top: 50%
+
+.form
+
+  &-control
+    display: block
+    width: 100%
+    font:
+      weight: 400
+    line-height: 1.5
+    color: #333
+    background:
+      color: #fff
+      clip: padding-box
+    border: 1px solid $border
+      radius: 0
+    padding: 10px 10px 10px
+    transition: all .3s ease
+    &:focus
+      border-color: $info
+
+    &.is-error
+      color: $danger
+      border-color: $danger
+
+  &-head
+    margin: 
+      bottom: 30px
+    padding: 
+      bottom: 15px
+    border-bottom: 1px solid $border
+    .heading
+      font:
+        size: 30px
+        weight: 400
+      &.is-small
+        font-size: 22px
+        line-height: 1.2
+
+  &-group
+    position: relative
+    &:not(:last-child)
+      margin-bottom: 30px
+
+    .form-control
+      padding:
+        top: 10px
+        bottom: 6px
+
+    .note
+      padding: 
+        top: 2px
+        left: 10px
+
+  &-label
+    line-height: 1
+    position: absolute
+    z-index: 10
+    top: 0
+    transform: translateY(-50%)
+    left: 8px
+    padding: 2px 5px
+    background-color: #fff
+    font-size: 11px
+    letter-spacing: .05em
+    color: #999
+
+.form-user
+  width: 550px
+  max-width: 100%
+  margin: auto
+  
+  .btn
+    border-radius: 0
+    font-size: 1.1em
