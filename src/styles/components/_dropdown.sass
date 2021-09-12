@@ -1,0 +1,30 @@
+@charset "utf-8"
+
+.dropdown
+  position: relative
+
+  &-content
+    position: absolute
+    z-index: 10
+    top: 100%
+    right: 0
+    background-color: #484f59
+    padding: 10px
+    border-radius: 4px
+    &:before
+      content: ""
+      position: absolute
+      right: 5px
+      $val: 10px
+      top: -#{$val/2}
+      width: #{$val}
+      height: #{$val}
+      background-color: #484f59
+      transform: rotate(45deg)
+
+    .list
+      > li
+        &:not(:last-child)
+          padding-bottom: 5px
+          margin-bottom: 7px
+          border-bottom: 1px solid rgba(255,255,255,.05)

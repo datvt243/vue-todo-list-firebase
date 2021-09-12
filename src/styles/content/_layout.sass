@@ -1,0 +1,39 @@
+@charset "utf-8"
+
+.container-wrappper
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: calc(100vh - 30px)
+  margin-top: 30px
+.header-wrapper 
+  margin-bottom: 30px
+.main-wrapper 
+  flex-grow: 1
+  position: relative
+.footer-wrapper 
+  text-align: center
+  font-size: 12px
+  letter-spacing: .05em
+  margin-top: 30px
+  .container
+    padding: 2rem 0
+    border-top: .1rem solid rgba(255, 255, 255, .1)
+
+.d-flex
+  $val: 5px
+  margin: 
+    left: -#{$val}
+    right: -#{$val}
+  > *
+    padding: 
+      left: #{$val}
+      right: #{$val}
+
+.box-inner
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  padding: 20px
+  margin-bottom: 20px
+  &.is-empty
+    padding: 40px 20px
+      

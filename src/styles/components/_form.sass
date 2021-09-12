@@ -1,0 +1,105 @@
+@charset "utf-8"
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  cursor: pointer
+  padding-right: 30px !important
+  background-repeat: no-repeat
+  background-position: 100% 50%
+  background-image: url("../assets/icon/icon-dropdown.png")
+
+.checkbox, .radio
+  position: relative
+  cursor: pointer
+  line-height: 1.4
+  padding:
+    left: 25px
+
+  input
+    display: none
+
+  .virtual-box
+    position: absolute
+    left: 0
+    top: 0
+    $val: 20px
+    width: #{$val}
+    height: #{$val}
+    border: 0.5px solid $border
+    background:
+      color: #484f59
+      size: cover
+      position: center
+      repeat: no-repeat
+
+  .text
+    display: inline-block
+    vertical-align: middle
+
+  input
+    
+    &:checked
+      ~ .virtual-box
+        border: 1px solid $border
+
+.checkbox
+  .virtual-box
+    border-radius: 2px
+  input
+    &:checked ~ .virtual-box
+      background:
+        image: url("../assets/icon/icon-check.png")
+      
+.form
+
+  &-control
+    display: block
+    width: 100%
+    font:
+      weight: 400
+    line-height: 1.2
+    color: #fff
+    background:
+      color: #343a40
+      clip: padding-box
+    border: 1px solid #2e3238
+      radius: 4px
+    padding: 5px 10px
+    transition: all .3s ease
+    &:focus
+      border-color: $info
+
+    &.is-error
+      color: $danger
+      border-color: $danger
+
+  &-group
+    position: relative
+    &:not(:last-child)
+      margin-bottom: 30px
+
+    .form-control
+      padding:
+        top: 10px
+        bottom: 6px
+
+    .note
+      padding: 
+        top: 2px
+        left: 10px
+
+  &-label
+    line-height: 1
+    position: absolute
+    z-index: 10
+    top: 0
+    transform: translateY(-50%)
+    left: 8px
+    padding: 2px 5px
+    background-color: #fff
+    font-size: 11px
+    letter-spacing: .05em
+    color: #999
+

@@ -1,0 +1,72 @@
+@charset "utf-8"
+
+h1, h2, h3, h4, h5, h6
+  line-height: 1.4
+  font:
+    weight: 700
+
+.hr, hr
+  border: 0
+    bottom: 1px solid
+
+strong, .strong
+  font-weight: 700
+
+small, .small
+  font-size: .9em
+
+a
+  color: $base-font-color
+  text-decoration: none
+  &.url
+    color: $success
+
+img
+  max-width: 100%
+  vertical-align: middle
+
+.disabled
+  pointer-events: none
+  opacity: .5
+
+.del
+  text-decoration: line-through
+
+.trans
+  transition: opacity .3s ease
+  &:hover
+    opacity: .7
+
+.nowrap
+  white-space: nowrap !important
+
+.pointer
+  cursor: pointer
+
+.hidden
+  display: none
+
+.invisible
+  visibility: hidden
+
+.relative
+  position: relative
+
+.wrapper
+  margin: 
+    left: auto
+    right: auto
+  &:not(:last-child)
+    margin-bottom: 30px
+
++lg
+  .lg-hidden
+    display: none !important
++md
+  .md-hidden
+    display: none !important
++sm
+  .sm-hidden
+    display: none !important
+
+

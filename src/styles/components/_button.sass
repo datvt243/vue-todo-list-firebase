@@ -1,0 +1,50 @@
+@charset "utf-8"
+
+.btn
+  display: inline-block
+  font-weight: 400
+  text-align: center
+  vertical-align: middle
+  user-select: none
+  color: #fff
+  border: 0
+  background-color: #343a40
+  padding: 10px 15px
+  line-height: 1.5
+  border: 1px solid transparent
+    radius: $radius
+  transition: color .3s ease, background-color .3s ease, opacity .3s ease
+
+  svg.icon-svg + span, .text
+    display: inline-block
+    vertical-align: middle
+  
+  &:hover
+    opacity: .8
+
+  &:not(:disabled):not(.disabled)
+    cursor: pointer
+
+  &.is-active
+    color: $info
+    border-color: $info
+
+  &-primary
+    background-color: #fff
+    border: 1px solid $border
+  &-secondary
+    background-color: #eee
+    box-shadow: none
+    color: #424242
+    border-color: #eee
+
+  @each $name, $value in $colors
+
+    &.is-#{$name}
+      color: #fff
+      border-color: $value
+      background-color: $value !important
+    &.is-#{$name}-light
+      color: $value
+      border: 1px solid $value
+      // background-color: #fff
